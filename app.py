@@ -10,7 +10,7 @@ def encode_image(image_file):
 
 st.set_page_config(page_title="Analisis de imagen", layout="centered", initial_sidebar_state="collapsed")
 # Streamlit page setup
-st.title("Análisis de Imagen:🤖🏞️")
+st.title("Análisis de Imagen:🔍🎩")
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 
@@ -30,17 +30,17 @@ if uploaded_file:
         st.image(uploaded_file, caption=uploaded_file.name, use_container_width=True)
 
 # Toggle for showing additional details input
-show_details = st.toggle("Adiciona detalles sobre la imagen", value=False)
+show_details = st.toggle("Agrega detalles sobre la imagen", value=False)
 
 if show_details:
     # Text input for additional details about the image, shown only if toggle is True
     additional_details = st.text_area(
-        "Adiciona contexto de la imagen aqui:",
+        "Agrega contexto de la imagen aqui:",
         disabled=not show_details
     )
 
 # Button to trigger the analysis
-analyze_button = st.button("Analiza la imagen", type="secondary")
+analyze_button = st.button("Analiza la imagen🤓", type="secondary")
 
 # Check if an image has been uploaded, if the API key is available, and if the button has been pressed
 if uploaded_file is not None and api_key and analyze_button:
@@ -93,6 +93,6 @@ if uploaded_file is not None and api_key and analyze_button:
 else:
     # Warnings for user action required
     if not uploaded_file and analyze_button:
-        st.warning("Please upload an image.")
+        st.warning("Porfavor ingresa una imagen.")
     if not api_key:
         st.warning("Por favor ingresa tu API key.")
