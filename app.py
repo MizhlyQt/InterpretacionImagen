@@ -33,7 +33,7 @@ api_key = os.environ['OPENAI_API_KEY']
 client = OpenAI(api_key=api_key)
 
 # File uploader allows user to add their own image
-uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader("Agrega una Imagen", type=["jpg", "png", "jpeg"])
 
 if uploaded_file:
     # Display the uploaded image
