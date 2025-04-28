@@ -14,6 +14,17 @@ st.title("Análisis de Imagen:🔍🎩")
 ke = st.text_input('Ingresa tu Clave')
 os.environ['OPENAI_API_KEY'] = ke
 
+page_bg_img = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/935/176/non_2x/abstract-geometric-seamless-pattern-background-design-modern-with-triangle-3d-shape-free-vector.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Retrieve the OpenAI API Key from secrets
 api_key = os.environ['OPENAI_API_KEY']
